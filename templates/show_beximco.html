@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BEXIMCO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='index.png') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <br>
+        <style>
+            li {
+                float: left;
+            }
+        </style>
+        <ul class="menu">
+            <li><a href="{{ url_for('scrap') }}"><b> SQUARE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </li>
+            <li><a href="{{ url_for('incepta') }}"><b> INCEPTA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </li>
+            <li><a href="{{ url_for('beximco') }}"><b> BEXIMCO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            </li>
+        </ul>
+
+        <br>
+
+
+        <h2>BEXIMCO Pharmaceuticals Ltd</h2>
+        <p>Select Alphabet to find the BEXIMCO Pharma Medicine</p>
+        <form class="form-inline" method="POST" action="{{ url_for('beximco') }}">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Please select</span>
+                    <select name="comp_select" class="selectpicker form-control">
+                            {% for o in data %}
+                            <option value="{{ o.name }}" >{{ o.name }} </option>
+                            {% endfor %}
+                          </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Go</button>
+            </div>
+        </form>
+
+
+        <h1> {{ select }} </h1>
+
+
+        <table border="1" class="table">
+            <tr>
+                <td><b>Index</b></td>
+                <td><b>Brand Name <-> Generic Name</b></td>
+            </tr>
+            {% with messages = get_flashed_messages(with_categories=true,category_filter="beximco_med") %} {% if messages %} {% for message in messages %}
+
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ message[1] }}</td>
+                {% endfor %} {% endif %} {% endwith %}
+            </tr>
+
+        </table>
+        <br>
+        <!--
+        
+        <table>
+            <tr>
+                <td>Brand Name</td>
+                <td>Generic Name</td>
+            </tr>
+            <tr>
+                {% with messages = get_flashed_messages(with_categories=true,category_filter="brand_name") %} {% if messages %} {% for message in messages %}
+
+                <td>{{ message[1] }}</td>
+                {% with messages = get_flashed_messages(with_categories=true,category_filter="generic_name") %} {% if messages %} {% for message in messages %}
+                <td>{{ message[1] }}</td>
+            </tr>
+
+        </table>
+
+        {% endfor %} {% endif %} {% endwith %} {% endfor %} {% endif %} {% endwith %}
+    -->
+
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,14 @@
+.alert-info {
+    color: #31708F;
+    background-color: #F7D9ED;
+    border-color: #BCE8F1;
+}
+
+h2 {
+    color: red;
+}
+
+li {
+    height: 30px;
+    line-height: 30px;
+}

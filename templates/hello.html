@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+    <title>DEMO</title>
+
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"-->
+    <link rel="icon" href="{{ url_for('static', filename='index.png') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+
+<body>
+
+
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('test') }}"><b>Sentiment Analysis</b></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('scrapperList') }}"><b>Web Scraping</b></a>
+        </li>
+
+    </ul>
+
+
+    <div class="container">
+
+
+        <br>
+        <style>
+            li {
+                float: right;
+            }
+        </style>
+        <ul class="menu">
+
+        </ul>
+
+        <form action="" method="post" role="form">
+            {{ form.csrf }}
+            <div>
+
+                <img src="{{ url_for('static', filename='index.png') }}" class="index" style="position:absolute;left:200px;top:70px;">
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>Tweet Search with Twitter ID</h2>
+            <div class="form-group">
+                <label for="name">User Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Search with username ">
+                <br>
+
+                <label for="count">Count:</label>
+                <input type="number" class="form-control" id="count" name="count" placeholder="Enter Tweet Count">
+                <br>
+                <!--
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter a password.">
+                -->
+
+            </div>
+            <button type="submit" class="btn btn-success">Search For Tweet</button>
+        </form>
+
+        <br> {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for message in messages %} {% if "Error" not in message[1]: %}
+        <div class="alert alert-info">
+            <strong> {{ loop.index }} Success! </strong> {{ message[1] }}
+        </div>
+        {% endif %} {% if "Error" in message[1]: %}
+        <div class="alert alert-warning">
+            {{ message[1] }}
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    </div>
+    <br>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -89,7 +89,7 @@ lazy-object-proxy==1.2.2
 leaflet==0.0.3
 llvmlite==0.15.0
 locket==0.2.0
-lxml==3.7.2
+lxml==4.6.2
 MarkupSafe==1.0
 menuinst==1.4.4
 mistune==0.7.3

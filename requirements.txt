@@ -53,7 +53,7 @@ feedparser==5.2.1
 Flask==0.12
 Flask-Babel==0.11.2
 Flask-Compress==1.4.0
-Flask-Cors==3.0.2
+Flask-Cors==3.0.9
 Flask-MySQL==1.4.0
 Flask-SQLAlchemy==2.3.2
 Flask-Table==0.5.0

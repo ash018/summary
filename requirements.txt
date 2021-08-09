@@ -144,7 +144,7 @@ python-dateutil==2.6.1
 pyttsx==1.2
 pyttsx3==2.7
 pytz==2016.10
-pywin32==220
+pywin32==301
 pywin32-ctypes==0.1.2
 PyYAML==3.12
 pyzmq==16.0.2

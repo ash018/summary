@@ -108,7 +108,7 @@ numexpr==2.6.1
 numpy==1.14.0
 numpydoc==0.6.0
 oauthlib==2.0.6
-openpyxl==2.4.1
+openpyxl==2.4.2
 pandas-datareader==0.5.0
 partd==0.3.7
 Paste==2.0.3

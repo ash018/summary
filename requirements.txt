@@ -17,7 +17,7 @@ Bottleneck==1.2.0
 bs4==0.0.1
 bz2file==0.98
 cache==1.0.3
-certifi==2018.1.18
+certifi==2022.12.7
 cffi==1.9.1
 chardet==3.0.4
 cheroot==6.0.0
